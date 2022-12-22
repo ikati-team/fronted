@@ -1,0 +1,15 @@
+.header-input {
+    font-size: 30px;
+}
+
+input {
+    width: 100%;
+}
+
+input[type=file] {
+    width: 250px;
+}
+
+.avatar {
+    height: auto;
+}
