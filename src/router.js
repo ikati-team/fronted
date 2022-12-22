@@ -1,9 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Viewer from "@/pages/teams/Viewer.vue";
+import TeamsViewer from "@/pages/teams/TeamsViewer.vue";
+import UsersViewer from "@/pages/users/UsersViewer.vue";
 
 const routes = [
-  { path: "/team/:id", name: 'TeamViewer', component: Viewer },
-  { path: "/user/:id", name: 'UserViewer', component: Viewer }
+  { path: "/team/:id", name: 'TeamsViewer', component: TeamsViewer },
+  { path: "/user/:id", name: 'UsersViewer', component: UsersViewer }
 ]
 
 const router = createRouter({

@@ -6,15 +6,15 @@
       <h2>🚀 Мы делаем жизнь людей проще</h2>
       <ul class="list-group">
         <li class="list-group-item">
-          <p>Котик 🐈 <router-link :to="{ name: 'UserViewer', params: { id: 1 } }">@leo2r</router-link></p>
+          <p>Котик 🐈 <router-link :to="{ name: 'UsersViewer', params: { id: 1 } }">@leo2r</router-link></p>
           <p>📧 <a href="mailto:leo2r@ikati.space">leo2r@ikati.space</a></p>
         </li>
         <li class="list-group-item">
-          <p>Хозяйн 🧑 <router-link :to="{ name: 'UserViewer', params: { id: 2 } }">@beavernotacat</router-link></p>
+          <p>Хозяйн 🧑 <router-link :to="{ name: 'UsersViewer', params: { id: 2 } }">@beavernotacat</router-link></p>
           <p>📧 <a href="mailto:beavernotacat@ikati.space">beavernotacat@ikati.space</a></p>
         </li>
         <li class="list-group-item">
-          <p>Оператор 🎥 <router-link :to="{ name: 'UserViewer', params: { id: 2 } }">@Bazzzber</router-link></p>
+          <p>Оператор 🎥 <router-link :to="{ name: 'UsersViewer', params: { id: 2 } }">@Bazzzber</router-link></p>
           <p>📧 <a href="mailto:Bazzzber@ikati.space">Bazzzber@ikati.space</a></p>
         </li>
       </ul>
@@ -24,34 +24,12 @@
 </template>
 
 <script>
+import '@/assets/viewers.css'
+
 export default {
-  name: "Viewer"
+  name: "TeamsViewer"
 }
 </script>
 
 <style scoped>
-main {
-  padding: 16px;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-h2 {
-  font-size: 20px;
-}
-
-.avatar {
-  max-width: 250px;
-  height: 100%;
-}
-
-.main {
-  width: calc(100% - 250px - 16px);
-  margin-left: 16px;
-  min-width: 250px;
-}
-
-.list-group-item * {
-  margin-bottom: 0;
-}
 </style>
