@@ -1,22 +1,25 @@
 <template>
   <main>
-    <img class="avatar" alt="team avatar" width="100%" src="https://thumbs.dreamstime.com/b/cute-cat-portrait-square-photo-beautiful-white-closeup-105311158.jpg">
-    <h1>Ikati</h1>
-    <p>🚀 Мы делаем жизнь людей проще</p>
-    <ul>
-      <li>
-        <p>@leo2r</p>
-        <p>Котик</p>
-      </li>
-      <li>
-        <p>@beavernotacat</p>
-        <p>Хозяйн</p>
-      </li>
-      <li>
-        <p>@Bazzzber</p>
-        <p>Оператор</p>
-      </li>
-    </ul>
+    <img class="avatar" alt="team avatar" src="https://thumbs.dreamstime.com/b/cute-cat-portrait-square-photo-beautiful-white-closeup-105311158.jpg">
+    <div class="main">
+      <h1>Ikati</h1>
+      <h2>🚀 Мы делаем жизнь людей проще</h2>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <p>Котик 🐈 <router-link :to="{ name: 'UserViewer', params: { id: 1 } }">@leo2r</router-link></p>
+          <p>📧 <a href="mailto:leo2r@ikati.space">leo2r@ikati.space</a></p>
+        </li>
+        <li class="list-group-item">
+          <p>Хозяйн 🧑 <router-link :to="{ name: 'UserViewer', params: { id: 2 } }">@beavernotacat</router-link></p>
+          <p>📧 <a href="mailto:beavernotacat@ikati.space">beavernotacat@ikati.space</a></p>
+        </li>
+        <li class="list-group-item">
+          <p>Оператор 🎥 <router-link :to="{ name: 'UserViewer', params: { id: 2 } }">@Bazzzber</router-link></p>
+          <p>📧 <a href="mailto:Bazzzber@ikati.space">Bazzzber@ikati.space</a></p>
+        </li>
+      </ul>
+      <button style="margin-top: 16px" class="btn btn-dark">Подать запрос на присоединение</button>
+    </div>
   </main>
 </template>
 
@@ -29,10 +32,26 @@ export default {
 <style scoped>
 main {
   padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
+h2 {
+  font-size: 20px;
+}
 
 .avatar {
   max-width: 250px;
+  height: 100%;
+}
+
+.main {
+  width: calc(100% - 250px - 16px);
+  margin-left: 16px;
+  min-width: 250px;
+}
+
+.list-group-item * {
+  margin-bottom: 0;
 }
 </style>
