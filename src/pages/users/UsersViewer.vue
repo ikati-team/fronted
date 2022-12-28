@@ -4,7 +4,8 @@
     <div class="main">
       <h1>@{{ user.username }}</h1>
       <p>{{ user.first_name }} {{ user.second_name }}</p>
-      <span>📧 <a href="mailto:leo2r@ikati.space">leo2r@ikati.space</a></span>
+      <a :href="`https://yandex.ru/maps/?text=${user.profile.city}`">📍 {{ user.profile.city }}</a>
+      <p><span>📧 <a href="mailto:leo2r@ikati.space">leo2r@ikati.space</a></span></p>
       <h2>Навыки</h2>
       <ul class="list-group">
         <li class="list-group-item" v-for="skill in user.profile.skill">
