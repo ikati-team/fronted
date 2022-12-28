@@ -19,31 +19,19 @@
 
 <script>
 import '@/assets/lists.css'
+import { get } from '@/apiWrapper/fetch'
+
 export default {
   name: "UsersList",
   data () {
     return {
-      users: [
-        {
-          "username": "leo2r",
-          "first_name": "",
-          "last_name": "",
-          "email": "leo2r@ikati.space",
-          "profile": {
-            "city": "Владивосток",
-            "biography": "",
-            "skill": [
-              {
-                "name": "Мяукать",
-                "description": "Издовать кошачьи звуки"
-              }
-            ],
-            "social_networks": [],
-            "preference_role": "Котик"
-          }
-        }
-      ]
+      users: []
     }
+  },
+  beforeMount() {
+    get( 'users/').then((response) => {
+      this.users = response
+    })
   }
 }
 </script>
