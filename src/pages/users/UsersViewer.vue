@@ -17,7 +17,6 @@
 </template>
 
 <script>
-import '@/assets/viewers.css'
 import {get} from "@/apiWrapper/fetch";
 
 export default {
@@ -36,5 +35,5 @@ export default {
 </script>
 
 <style scoped>
-
+@import "@/assets/viewers.css";
 </style>

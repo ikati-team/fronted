@@ -25,9 +25,6 @@
 </template>
 
 <script>
-import '@/assets/viewers.css'
-import '@/assets/editors.css'
-
 export default {
   name: "TeamsViewer",
   data () {
@@ -60,4 +57,6 @@ export default {
 </script>
 
 <style scoped>
+@import "@/assets/viewers.css";
+@import "@/assets/editors.css";
 </style>

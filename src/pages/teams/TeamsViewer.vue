@@ -24,12 +24,11 @@
 </template>
 
 <script>
-import '@/assets/viewers.css'
-
 export default {
   name: "TeamsViewer"
 }
 </script>
 
 <style scoped>
+@import "@/assets/viewers.css";
 </style>
