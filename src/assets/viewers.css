@@ -4,10 +4,6 @@ main {
     flex-wrap: wrap;
 }
 
-h2 {
-    font-size: 20px;
-}
-
 .avatar {
     max-width: 250px;
     height: 100%;
