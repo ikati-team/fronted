@@ -3,8 +3,7 @@
     <ul class="list-group">
       <li class="list-group-item" v-for="(user, id) in users">
         <img class="avatar" alt="team avatar" src="https://thumbs.dreamstime.com/b/cute-cat-portrait-square-photo-beautiful-white-closeup-105311158.jpg">
-        <!-- ⚠️ TODO: fetch user id from API -->
-        <h2><router-link :to="{ name: 'UsersViewer', params: { id: id + 1 } }">@{{ user.username }}</router-link><span class="preference-role">({{ user.profile.preference_role }})</span></h2>
+        <h2><router-link :to="{ name: 'UsersViewer', params: { id: user.id } }">@{{ user.username }}</router-link><span class="preference-role">({{ user.profile.preference_role }})</span></h2>
         <div class="skills">
           Может:
           <ul>

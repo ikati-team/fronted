@@ -7,8 +7,7 @@
       <article>{{ team.description }}</article>
       <ul class="list-group">
         <li class="list-group-item" v-for="member in team.team_member">
-          <p><router-link :to="{ name: 'UsersViewer', params: { id: 1 } }">@{{ member.user.username }}</router-link></p>
-<!--          TODO: load user id from API -->
+          <p><router-link :to="{ name: 'UsersViewer', params: { id: member.user.id } }">@{{ member.user.username }}</router-link></p>
           <p>{{ member.role }}</p>
         </li>
       </ul>
