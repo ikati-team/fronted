@@ -51,7 +51,7 @@ export default {
     }
   },
   beforeMount() {
-    get( 'teams/').then((response) => {
+    get( 'current_user_teams/').then((response) => {
       this.teams = response
     })
   }
