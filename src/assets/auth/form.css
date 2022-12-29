@@ -1,0 +1,15 @@
+.card {
+    padding: 16px;
+}
+
+.bg {
+    display: grid;
+    width: 100%;
+}
+
+.card {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}

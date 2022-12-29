@@ -1,3 +1,5 @@
+import { ApiException } from "@/apiWrapper/exceptions";
+
 async function get(url, headers) {
     let response = await fetch(API_URL + url, {
         method: 'GET',
@@ -6,12 +8,20 @@ async function get(url, headers) {
     return await response.json()
 }
 
-async function post(url, headers) {
+async function post(url, headers, body) {
     let response = await fetch(API_URL + url, {
         method: 'POST',
-        headers: headers
+        headers: headers,
+        body: body
     });
-    return await response.json()
+    if (!response.ok) {
+        throw new ApiException(response.status, await response.json())
+    }
+    try {
+        return await response.json()
+    } catch (SyntaxError) {
+        return {}
+    }
 }
 
 export { get, post }
