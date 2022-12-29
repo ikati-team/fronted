@@ -1,6 +1,7 @@
 <template>
   <div class="bg">
     <form class="card">
+      <p v-if="wrong" class="p-3 mb-2 bg-danger text-white rounded">🤔 Где-то ошибка</p>
       <div class="mb-3">
         <label for="email" class="form-label">Адрес электронной почты</label>
         <input v-model="login" type="email" class="form-control" id="email" placeholder="leo2r@ikati.space">
@@ -22,15 +23,21 @@ export default {
   data() {
     return {
       login: "",
-      password: ""
+      password: "",
+      wrong: false
     }
   },
   methods: {
     checkAuth () {
+      this.wrong = false
       let credentials = new FormData();
       credentials.append('username', this.login);
       credentials.append('password', this.password);
-      post('login/', {}, credentials)
+      post('login/', {}, credentials).then(() => {
+        this.$router.push('/')
+      }).catch(() => {
+        this.wrong = true
+      })
     }
   }
 }
