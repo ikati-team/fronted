@@ -20,7 +20,7 @@
             <a class="nav-link btn btn-outline-dark" href="#">Мои приглашения</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link btn btn-outline-dark" href="#">Мои команды</a>
+            <router-link class="nav-link btn btn-outline-dark" :to="{ name: 'TeamsList' }">Мои команды</router-link>
           </li>
         </ul>
       </div>
