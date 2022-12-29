@@ -1,9 +1,6 @@
 <template>
   <main>
-    <div class="img">
-      <img class="avatar" alt="team avatar" src="https://thumbs.dreamstime.com/b/cute-cat-portrait-square-photo-beautiful-white-closeup-105311158.jpg">
-      <input type="file" class="form-control">
-    </div>
+    <img class="avatar" alt="team avatar" src="https://thumbs.dreamstime.com/b/cute-cat-portrait-square-photo-beautiful-white-closeup-105311158.jpg">
     <div class="main">
       <input :value="name" placeholder="Название команды" class="header-input" id="name">
       <input :value="slogan" placeholder="Слоган" id="slogan">
@@ -19,38 +16,30 @@
           + Ещё участник
         </li>
       </ul>
-      <button style="margin-top: 16px" class="btn btn-dark">Сохранить</button>
+      <button style="margin-top: 16px" class="btn btn-dark" @click="save">Сохранить</button>
     </div>
   </main>
 </template>
 
 <script>
+import { post } from "@/apiWrapper/fetch";
+
 export default {
   name: "TeamsViewer",
   data () {
     return {
-      name: 'Ikati',
-      slogan: '🚀 Мы делаем жизнь людей проще',
-      members: [
-        {
-          id: 1,
-          nick: 'leo2r',
-          jobTitle: 'Котик 🐈',
-          mail: 'leo2r@ikati.space'
-        },
-        {
-          id: 2,
-          nick: 'beavernotacat',
-          jobTitle: 'Хозяйн 🧑',
-          mail: 'beavernotacat@ikati.space'
-        },
-        {
-          id: 3,
-          nick: 'Bazzzber',
-          jobTitle: 'Оператор 🎥',
-          mail: 'Bazzzber@ikati.space'
-        },
-      ]
+      name: '',
+      slogan: '',
+      members: []
+    }
+  },
+  methods: {
+    save () {
+      let teamData = new FormData();
+      teamData.append('name', this.name);
+      teamData.append('description', this.slogan);
+
+      post('teams/', teamData)
     }
   }
 }

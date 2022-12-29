@@ -1,11 +1,10 @@
 import { ApiException } from "@/apiWrapper/exceptions";
 import { router } from "@/router";
 
-async function get(url, headers) {
+async function get(url) {
     let response = await fetch(API_URL + url + '/', {
         method: 'GET',
-        credentials: 'include',
-        headers: headers
+        credentials: 'include'
     })
     if (response.status === 403) {
         await router.push({ name: "Login", query: { back: router.currentRoute.value.fullPath } })
@@ -13,10 +12,9 @@ async function get(url, headers) {
     return await response.json()
 }
 
-async function post(url, headers, body) {
+async function post(url, body) {
     let response = await fetch(API_URL + url + '/', {
         method: 'POST',
-        headers: headers,
         credentials: 'include',
         body: body
     });

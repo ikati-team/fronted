@@ -33,7 +33,7 @@ export default {
       let credentials = new FormData();
       credentials.append('username', this.login);
       credentials.append('password', this.password);
-      post('login/', {}, credentials).then(() => {
+      post('login/', credentials).then(() => {
         if (this.$route.query.back !== undefined) {
           this.$router.push(this.$route.query.back)
         } else {

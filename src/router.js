@@ -6,7 +6,7 @@ import UsersList from "@/pages/users/UsersList.vue";
 import Login from "@/pages/auth/Login.vue";
 
 const routes = [
-  { path: "/team/:id/edit", name: 'TeamsEditor', component: TeamsEditor },
+  { path: "/team/new", name: 'TeamsEditor', component: TeamsEditor },
   { path: "/team/:id", name: 'TeamsViewer', component: TeamsViewer },
   { path: "/user/:id", name: 'UsersViewer', component: UsersViewer },
   { path: "/user/", name: 'UserViewer', component: UsersList },
