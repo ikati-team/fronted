@@ -11,7 +11,6 @@
           <p>{{ member.role }}</p>
         </li>
       </ul>
-      <button style="margin-top: 16px" class="btn btn-dark">Подать запрос на присоединение</button>
     </div>
   </main>
 </template>
