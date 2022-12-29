@@ -11,13 +11,16 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarText">
         <ul class="navbar-nav mb-2 mb-lg-0 ml-auto">
           <li class="nav-item">
-            <a class="nav-link btn btn-outline-dark" aria-current="page" href="#">Создать</a>
+            <router-link class="nav-link btn btn-outline-dark" aria-current="page" :to="{ name: 'TeamsEditor' }">Создать команду</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link btn btn-outline-dark" href="#">Найти</a>
+            <router-link class="nav-link btn btn-outline-dark" :to="{ name: 'UserViewer' }">Найти участника</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link btn btn-outline-dark" href="#">Моя команда</a>
+            <a class="nav-link btn btn-outline-dark" href="#">Мои приглашения</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-dark" href="#">Мои команды</a>
           </li>
         </ul>
       </div>
