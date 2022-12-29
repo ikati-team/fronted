@@ -1,10 +1,14 @@
 import { ApiException } from "@/apiWrapper/exceptions";
+import { router } from "@/router";
 
 async function get(url, headers) {
     let response = await fetch(API_URL + url, {
         method: 'GET',
         headers: headers
     })
+    if (response.status === 403) {
+        await router.push({name: "Login"})
+    }
     return await response.json()
 }
 
