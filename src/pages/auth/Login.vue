@@ -33,7 +33,8 @@ export default {
       let credentials = new FormData();
       credentials.append('username', this.login);
       credentials.append('password', this.password);
-      post('login/', credentials).then(() => {
+      post('auth/jwt/create/', credentials).then((response) => {
+        localStorage.setItem("token", response.access)
         if (this.$route.query.back !== undefined) {
           this.$router.push(this.$route.query.back)
         } else {
