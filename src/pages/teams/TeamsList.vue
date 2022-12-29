@@ -1,9 +1,8 @@
 <template>
   <ul class="list-group">
-    <li class="list-group-item" v-for="(team, id) in teams">
+    <li class="list-group-item" v-for="team in teams">
       <img class="avatar" alt="team avatar" src="https://thumbs.dreamstime.com/b/cute-cat-portrait-square-photo-beautiful-white-closeup-105311158.jpg">
-      <!-- ⚠️ TODO: fetch team id from API -->
-      <router-link :to="{ name: 'TeamsViewer', params: { id: id + 1 } }"><h2>{{ team.name }}</h2></router-link>
+      <router-link :to="{ name: 'TeamsViewer', params: { id: team.id } }"><h2>{{ team.name }}</h2></router-link>
       <p>{{ team.description }}</p>
     </li>
   </ul>

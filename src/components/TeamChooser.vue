@@ -15,11 +15,10 @@
           </button>
         </div>
         <ul class="list-group">
-          <li class="radio-chose-element" v-for="(team, id) in teams">
-            <input class="form-check-input" type="radio" :name="id" :id="team">
-            <label class="form-check-label list-group-item" :for="id">
+          <li class="radio-chose-element" v-for="team in teams">
+            <input class="form-check-input" type="radio" :name="team.id" :id="team.id">
+            <label class="form-check-label list-group-item" :for="team.id">
               <img class="avatar" alt="team avatar" src="https://thumbs.dreamstime.com/b/cute-cat-portrait-square-photo-beautiful-white-closeup-105311158.jpg">
-              <!-- ⚠️ TODO: fetch team id from API -->
               <h2>{{ team.name }}</h2>
               <p>{{ team.description }}</p>
             </label>
