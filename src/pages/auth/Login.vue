@@ -34,7 +34,11 @@ export default {
       credentials.append('username', this.login);
       credentials.append('password', this.password);
       post('login/', {}, credentials).then(() => {
-        this.$router.push('/')
+        if (this.$route.query.back !== undefined) {
+          this.$router.push(this.$route.query.back)
+        } else {
+          this.$router.push('/')
+        }
       }).catch(() => {
         this.wrong = true
       })
