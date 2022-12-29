@@ -5,7 +5,7 @@ import UsersViewer from "@/pages/users/UsersViewer.vue";
 import UsersList from "@/pages/users/UsersList.vue";
 
 const routes = [
-  { path: "/team/edit", name: 'TeamsEditor', component: TeamsEditor },
+  { path: "/team/:id/edit", name: 'TeamsEditor', component: TeamsEditor },
   { path: "/team/:id", name: 'TeamsViewer', component: TeamsViewer },
   { path: "/user/:id", name: 'UsersViewer', component: UsersViewer },
   { path: "/user/", name: 'UserViewer', component: UsersList }
