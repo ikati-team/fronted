@@ -13,15 +13,18 @@
           <p>{{ skill.description }}</p>
         </li>
       </ul>
+      <TeamChooser />
     </div>
   </main>
 </template>
 
 <script>
 import {get} from "@/apiWrapper/fetch";
+import TeamChooser from "@/components/TeamChooser.vue";
 
 export default {
   name: "UsersViewer",
+  components: {TeamChooser},
   data () {
     return {
       user: {}
