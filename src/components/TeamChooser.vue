@@ -48,9 +48,9 @@ export default {
   methods: {
     sendInvite() {
       let inviteData = new FormData()
-      inviteData.append('team', this.picked)
-      inviteData.append('target', this.user_id)
-      post('invites/create/', inviteData)
+      inviteData.append('team', '/teams/' + this.picked + '/')
+      inviteData.append('target', '/users/' + this.user_id + '/')
+      post('invite_create/', inviteData)
     }
   },
   beforeMount() {
