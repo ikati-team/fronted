@@ -17,7 +17,7 @@
             <router-link class="nav-link btn btn-outline-dark" :to="{ name: 'UserViewer' }">Найти участника</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link btn btn-outline-dark" href="#">Мои приглашения</a>
+            <router-link class="nav-link btn btn-outline-dark" :to="{ name: 'InvitationsList' }">Мои приглашения</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link btn btn-outline-dark" :to="{ name: 'TeamsList' }">Мои команды</router-link>
