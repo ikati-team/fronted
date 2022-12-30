@@ -6,15 +6,15 @@
       <p>{{ invite.team.description }}</p>
 
       <div class="buttons">
-        <button class="btn btn-danger">Отклонить</button>
-        <button class="btn btn-success" style="grid-column-start: 2">Принять</button>
+        <button class="btn btn-danger" @click="decline(invite.id)">Отклонить</button>
+        <button class="btn btn-success" style="grid-column-start: 2" @click="accept(invite.id)">Принять</button>
       </div>
     </li>
   </ul>
 </template>
 
 <script>
-import { get } from "@/apiWrapper/fetch";
+import { get, delete_fetch } from "@/apiWrapper/fetch";
 
 export default {
   name: "InvitationList",
@@ -23,10 +23,23 @@ export default {
       invites: {}
     }
   },
+  methods: {
+    load() {
+      get( 'invites/').then((response) => {
+        this.invites = response
+      })
+    },
+    accept(id) {
+      // TODO
+      this.load()
+    },
+    decline(id) {
+      delete_fetch('invites/' + id + '/')
+      this.load()
+    }
+  },
   beforeMount() {
-    get( 'invites/').then((response) => {
-      this.invites = response
-    })
+    this.load()
   }
 }
 </script>

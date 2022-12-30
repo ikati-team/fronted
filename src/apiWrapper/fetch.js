@@ -34,4 +34,18 @@ async function post(url, body) {
     }
 }
 
+export async function delete_fetch(url) {
+    const headers = new Headers()
+    headers.append('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    let response = await fetch(API_URL + url + '/', {
+        method: 'DELETE',
+        credentials: 'include',
+        headers: headers
+    })
+    if (response.status === 403 || response.status === 401) {
+        await router.push({ name: "Login", query: { back: router.currentRoute.value.fullPath } })
+    }
+    return await response.json()
+}
+
 export { get, post }
