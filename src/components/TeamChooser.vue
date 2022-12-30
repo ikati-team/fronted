@@ -16,7 +16,7 @@
         </div>
         <ul class="list-group">
           <li class="radio-chose-element" v-for="team in teams">
-            <input class="form-check-input" type="radio" :name="team.id" :id="team.id">
+            <input class="form-check-input" type="radio" :name="team.id" :id="team.id" :value="team.id" v-model="picked">
             <label class="form-check-label list-group-item" :for="team.id">
               <img class="avatar" alt="team avatar" src="https://thumbs.dreamstime.com/b/cute-cat-portrait-square-photo-beautiful-white-closeup-105311158.jpg">
               <h2>{{ team.name }}</h2>
@@ -26,7 +26,7 @@
         </ul>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" @click.native="sendInvite">Save changes</button>
         </div>
       </div>
     </div>
@@ -34,19 +34,23 @@
 </template>
 
 <script>
-import {get} from "@/apiWrapper/fetch";
+import { get, post } from "@/apiWrapper/fetch";
 
 export default {
   name: "TeamChooser",
-  props: [],
+  props: ['user_id'],
   data () {
     return {
-      teams: []
+      teams: [],
+      picked: 0
     }
   },
   methods: {
     sendInvite() {
-      console.log('TODO: send to api')
+      let inviteData = new FormData()
+      inviteData.append('team', this.picked)
+      inviteData.append('target', this.user_id)
+      post('invites/create/', inviteData)
     }
   },
   beforeMount() {

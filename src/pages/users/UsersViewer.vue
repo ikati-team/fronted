@@ -13,7 +13,7 @@
           <p>{{ skill.description }}</p>
         </li>
       </ul>
-      <TeamChooser />
+      <TeamChooser :user_id="user.id" />
     </div>
   </main>
 </template>
